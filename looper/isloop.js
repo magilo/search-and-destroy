@@ -2,6 +2,23 @@
 
 //Complete this algo
 const isLoop = (linkedlist) => {
+  let storage = [];
+  let firstVal = linkedlist.head.value
+  storage.push(firstVal)
+  let nextNode = linkedlist.head.next
+
+  while (nextNode) {
+    let currNode = nextNode;
+    let currVal = currNode.value
+    if (storage.includes(currVal)) {
+      return true;
+    } else {
+      storage.push(currVal)
+    }
+    nextNode = currNode.next;
+  }
+
+  return false;
 
 };
 
